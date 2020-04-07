@@ -1,0 +1,11 @@
+T1035 Service Execution
+Tactics: Execution
+
+Severity:
+Medium (Requires manual research as PSExec is a commonly used admin tool)
+
+Rule Query:
+
+Event 
+| where EventCategory == 13 and Source == "Microsoft-Windows-Sysmon"
+| where RenderedDescription contains  "PSExec" and RenderedDescription contains  "EulaAccepted"
