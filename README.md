@@ -1,0 +1,1 @@
+# My_Azure_Sentinel_Queries
