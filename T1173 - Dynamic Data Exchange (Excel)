@@ -1,0 +1,12 @@
+T1173 Dynamic Data Exchange
+Tactics: Execution
+
+Severity:
+High 
+
+Rule Query:
+
+Sysmon | where EventID == 1 
+| where Computer == "Computer Name"
+| where process_path contains "cmd.exe" and process_parent_path contains "excel.exe" and process_command_line contains "CMD.exe /c powershell"
+| extend HostCustomEntity = Computer
